@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=3 uid="uid://ca2jvwgsal41s"]
+
+[ext_resource type="PackedScene" uid="uid://r6no7klp707f" path="res://player.tscn" id="1_hbghi"]
+[ext_resource type="Script" uid="uid://coylkwrb32a35" path="res://level_1.gd" id="1_j7kpp"]
+[ext_resource type="PackedScene" uid="uid://bkc3bpqag35ys" path="res://ground.tscn" id="2_hn12h"]
+[ext_resource type="PackedScene" uid="uid://bjrslo30ur5w8" path="res://spike.tscn" id="3_hn12h"]
+[ext_resource type="PackedScene" uid="uid://du51p2p5nqnq2" path="res://goal_flag.tscn" id="3_ihfcg"]
+[ext_resource type="PackedScene" uid="uid://ce24kjgv4s0bi" path="res://bounaries.tscn" id="5_rka8t"]
+[ext_resource type="PackedScene" uid="uid://62rc5b762tv4" path="res://hud.tscn" id="6_5hph3"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_j7kpp")
+
+[node name="Player" parent="." instance=ExtResource("1_hbghi")]
+position = Vector2(240, 600)
+
+[node name="Ground" parent="." instance=ExtResource("2_hn12h")]
+
+[node name="Spike" parent="." instance=ExtResource("3_hn12h")]
+position = Vector2(334, 565)
+
+[node name="GoalFlag" parent="." instance=ExtResource("3_ihfcg")]
+position = Vector2(16, -7)
+
+[node name="Boundaries" parent="." instance=ExtResource("5_rka8t")]
+
+[node name="HUD" parent="." instance=ExtResource("6_5hph3")]
+
+[connection signal="start_game" from="HUD" to="." method="_on_start_game"]
