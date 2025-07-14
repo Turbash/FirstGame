@@ -1,7 +1,7 @@
 extends Area2D
 
 func _ready():
-	$AnimationPlayer.play("moving_horizontally")
+	$AnimationPlayer.play("move_left_right")
 
 func _on_moving_trap_body_entered(body):
 	if body.name == "Player":

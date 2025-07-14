@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bjrslo30ur5w8" path="res://spike.tscn" id="5_ehv2h"]
 [ext_resource type="PackedScene" uid="uid://cblrnkpohratx" path="res://platform.tscn" id="6_0s5r2"]
 [ext_resource type="PackedScene" uid="uid://ce24kjgv4s0bi" path="res://bounaries.tscn" id="8_7dov7"]
-[ext_resource type="PackedScene" uid="uid://b36b7fhimnoop" path="res://moving_trap.tscn" id="9_ehv2h"]
+[ext_resource type="PackedScene" uid="uid://b7cxfe0f5tcbm" path="res://movingt_trap.tscn" id="9_ehv2h"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_7j8ne")
@@ -31,5 +31,14 @@ position = Vector2(-87, -113)
 
 [node name="Boundaries" parent="." instance=ExtResource("8_7dov7")]
 
-[node name="MovingTrapRoot" parent="." instance=ExtResource("9_ehv2h")]
-scale = Vector2(1.2029, 0.901434)
+[node name="MovingtTrap" parent="." instance=ExtResource("9_ehv2h")]
+
+[node name="CollisionShape2D" parent="MovingtTrap" index="0"]
+position = Vector2(350, 436)
+
+[node name="Sprite2D" parent="MovingtTrap" index="1"]
+position = Vector2(351, 420)
+
+[connection signal="body_entered" from="MovingtTrap" to="MovingtTrap" method="_on_moving_trap_body_entered"]
+
+[editable path="MovingtTrap"]
