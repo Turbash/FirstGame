@@ -3,15 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://bod78tu7gthi7" path="res://art/flagGreen.png" id="1_e4xvr"]
 [ext_resource type="Script" uid="uid://d3n7dhc4au51u" path="res://goal_flag.gd" id="1_q1qw5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1qw5"]
-size = Vector2(18, 1)
+[sub_resource type="CircleShape2D" id="CircleShape2D_q1qw5"]
+radius = 8.24621
 
 [node name="GoalFlag" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_q1qw5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(406, 567.5)
-shape = SubResource("RectangleShape2D_q1qw5")
+position = Vector2(403, 560)
+shape = SubResource("CircleShape2D_q1qw5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(408, 556)

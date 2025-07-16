@@ -1,14 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://ca2jvwgsal41s"]
+[gd_scene load_steps=18 format=3 uid="uid://ca2jvwgsal41s"]
 
 [ext_resource type="PackedScene" uid="uid://r6no7klp707f" path="res://player.tscn" id="1_hbghi"]
 [ext_resource type="Script" uid="uid://coylkwrb32a35" path="res://level_1.gd" id="1_j7kpp"]
+[ext_resource type="Script" uid="uid://66lj0cj1qi7" path="res://gamemangager.gd" id="2_1pe0h"]
 [ext_resource type="Texture2D" uid="uid://cwitur7boyvrf" path="res://art/world_tileset.png" id="3_bjebc"]
 [ext_resource type="PackedScene" uid="uid://du51p2p5nqnq2" path="res://goal_flag.tscn" id="3_ihfcg"]
 [ext_resource type="PackedScene" uid="uid://ce24kjgv4s0bi" path="res://bounaries.tscn" id="5_rka8t"]
-[ext_resource type="PackedScene" uid="uid://62rc5b762tv4" path="res://hud.tscn" id="6_5hph3"]
 [ext_resource type="PackedScene" uid="uid://cblrnkpohratx" path="res://platform.tscn" id="8_bjebc"]
 [ext_resource type="PackedScene" uid="uid://batl7c6i8a63" path="res://coin.tscn" id="9_5rr72"]
 [ext_resource type="PackedScene" uid="uid://gx8inmnr67gr" path="res://killzone.tscn" id="9_gyffv"]
+[ext_resource type="FontFile" uid="uid://dg7vpj7o7toj0" path="res://fonts/PixelOperator8-Bold.ttf" id="10_1pe0h"]
+[ext_resource type="FontFile" uid="uid://j2guvnqqy7po" path="res://fonts/PixelOperator8.ttf" id="10_gyffv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rr72"]
 texture = ExtResource("3_bjebc")
@@ -230,6 +232,33 @@ distance = 0.129105
 position = Vector2(1, 0)
 script = ExtResource("1_j7kpp")
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_1pe0h")
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+visible = false
+offset_left = 519.0
+offset_top = 166.0
+offset_right = 623.0
+offset_bottom = 207.0
+theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("10_1pe0h")
+theme_override_font_sizes/font_size = 8
+text = "You collected x coins"
+autowrap_mode = 2
+
+[node name="WinLabel" type="Label" parent="GameManager"]
+visible = false
+offset_left = 504.0
+offset_top = 124.0
+offset_right = 618.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("10_1pe0h")
+theme_override_font_sizes/font_size = 16
+text = "You win!"
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(4, 2)
 tile_set = SubResource("TileSet_gyffv")
@@ -244,7 +273,9 @@ position = Vector2(106, 234)
 
 [node name="Camera" type="Camera2D" parent="Player"]
 zoom = Vector2(1.5, 1.5)
-limit_left = 0
+limit_left = 10
+limit_top = 0
+limit_right = 640
 limit_bottom = 350
 
 [node name="GoalFlag" parent="." instance=ExtResource("3_ihfcg")]
@@ -252,9 +283,6 @@ position = Vector2(202, -309)
 
 [node name="Boundaries" parent="." instance=ExtResource("5_rka8t")]
 position = Vector2(3, 238)
-
-[node name="HUD" parent="." instance=ExtResource("6_5hph3")]
-visible = false
 
 [node name="Platform" parent="." instance=ExtResource("8_bjebc")]
 position = Vector2(-222, -400)
@@ -290,6 +318,44 @@ position = Vector2(141, 342)
 rotation = 1.58693
 shape = SubResource("WorldBoundaryShape2D_5rr72")
 
-[connection signal="start_game" from="HUD" to="." method="_on_start_game"]
+[node name="Lablels" type="Node" parent="."]
+
+[node name="Label2" type="Label" parent="Lablels"]
+anchors_preset = -1
+anchor_right = 0.107
+anchor_bottom = 0.397
+offset_left = 450.0
+offset_top = 251.0
+offset_right = 462.52
+offset_bottom = 131.08
+theme_override_colors/font_color = Color(0.0980392, 0.313726, 0.752941, 1)
+theme_override_fonts/font = ExtResource("10_gyffv")
+theme_override_font_sizes/font_size = 8
+text = "Falling hurts"
+
+[node name="Label3" type="Label" parent="Lablels"]
+offset_left = 29.0
+offset_top = 166.0
+offset_right = 148.0
+offset_bottom = 196.0
+theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("10_gyffv")
+theme_override_font_sizes/font_size = 8
+text = "Collect coins to increase score
+"
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="Lablels"]
+offset_left = 235.0
+offset_top = 124.0
+offset_right = 400.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.0980392, 0.313726, 0.752941, 1)
+theme_override_fonts/font = ExtResource("10_gyffv")
+theme_override_font_sizes/font_size = 8
+text = "Reach the flag to progress
+"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
 
 [editable path="Player"]
