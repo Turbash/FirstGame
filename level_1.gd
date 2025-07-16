@@ -11,7 +11,6 @@ func _ready():
 	_reset_player()
 
 func _reset_player():
-	player.position = Vector2(240, 600)  # adjust for each level layout
 	player.velocity = Vector2.ZERO
 	player.can_move = true
 

@@ -4,17 +4,18 @@
 [ext_resource type="Script" uid="uid://d3n7dhc4au51u" path="res://goal_flag.gd" id="1_q1qw5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1qw5"]
-size = Vector2(64, 68)
+size = Vector2(18, 1)
 
 [node name="GoalFlag" type="Area2D"]
 script = ExtResource("1_q1qw5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(429, 574)
+position = Vector2(406, 567.5)
 shape = SubResource("RectangleShape2D_q1qw5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(432, 575)
+position = Vector2(408, 556)
+scale = Vector2(0.314286, 0.342857)
 texture = ExtResource("1_e4xvr")
 
 [connection signal="body_entered" from="." to="." method="_on_goalflag_body_entered"]
