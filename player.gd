@@ -29,8 +29,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		animated_sprite.play("idle")  # Could change to "bounce" animation if you have one
 	else:
-		animated_sprite.play("jump")
-
+		pass
 	# Movement control
 	if is_on_floor():
 		velocity.x = 0  # Disable movement on ground
