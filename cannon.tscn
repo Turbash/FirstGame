@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkjxouva7wogm"]
+
+[ext_resource type="Script" uid="uid://csc0aayo2p8wl" path="res://cannon.gd" id="1_23j6s"]
+[ext_resource type="Texture2D" uid="uid://cmkxvyi6d3bd0" path="res://art/Cannon Animations_ Idle, Shoot, Destroy.png" id="1_i10un"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i10un"]
+atlas = ExtResource("1_i10un")
+region = Rect2(102, 616, 250, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emysx"]
+atlas = ExtResource("1_i10un")
+region = Rect2(352, 616, 250, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjapt"]
+atlas = ExtResource("1_i10un")
+region = Rect2(602, 616, 250, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23j6s"]
+atlas = ExtResource("1_i10un")
+region = Rect2(99, 65, 250, 204)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_emysx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i10un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emysx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjapt")
+}],
+"loop": false,
+"name": &"destroy",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23j6s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wjapt"]
+radius = 67.0463
+height = 187.963
+
+[node name="Cannon" type="Node2D"]
+script = ExtResource("1_23j6s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -99)
+sprite_frames = SubResource("SpriteFrames_emysx")
+animation = &"idle"
+frame_progress = 0.613297
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(27, -70)
+rotation = 1.551
+shape = SubResource("CapsuleShape2D_wjapt")
