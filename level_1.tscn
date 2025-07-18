@@ -1,7 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://ca2jvwgsal41s"]
+[gd_scene load_steps=17 format=3 uid="uid://ca2jvwgsal41s"]
 
 [ext_resource type="PackedScene" uid="uid://r6no7klp707f" path="res://player.tscn" id="1_hbghi"]
-[ext_resource type="Script" uid="uid://coylkwrb32a35" path="res://level_1.gd" id="1_j7kpp"]
 [ext_resource type="Script" uid="uid://66lj0cj1qi7" path="res://gamemangager.gd" id="2_1pe0h"]
 [ext_resource type="Texture2D" uid="uid://cwitur7boyvrf" path="res://art/world_tileset.png" id="3_bjebc"]
 [ext_resource type="PackedScene" uid="uid://du51p2p5nqnq2" path="res://goal_flag.tscn" id="3_ihfcg"]
@@ -12,7 +11,7 @@
 [ext_resource type="FontFile" uid="uid://dg7vpj7o7toj0" path="res://fonts/PixelOperator8-Bold.ttf" id="10_1pe0h"]
 [ext_resource type="FontFile" uid="uid://j2guvnqqy7po" path="res://fonts/PixelOperator8.ttf" id="10_gyffv"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rr72"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1pe0h"]
 texture = ExtResource("3_bjebc")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -183,7 +182,7 @@ texture = ExtResource("3_bjebc")
 
 [sub_resource type="TileSet" id="TileSet_gyffv"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_5rr72")
+sources/0 = SubResource("TileSetAtlasSource_1pe0h")
 
 [sub_resource type="Animation" id="Animation_5rr72"]
 length = 1.5
@@ -230,7 +229,6 @@ distance = 0.129105
 
 [node name="Level1" type="Node2D"]
 position = Vector2(1, 0)
-script = ExtResource("1_j7kpp")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
