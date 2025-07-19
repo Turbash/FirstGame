@@ -12,26 +12,18 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite = $AnimatedSprite2D
 
 func _physics_process(delta):
-	# Apply gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	# Auto-bounce when hitting the floor
 	if is_on_floor():
 		velocity.y = BOUNCE_VELOCITY
 
-	# Get direction input (-1, 0, 1)
 	direction = Input.get_axis("move_left", "move_right")
-
-	# Sprite flipping (still useful mid-air)
-
-
-	# Movement control
+	
 	if is_on_floor():
 		wall_jump_counter=0
-		velocity.x = 0  # Disable movement on ground
+		velocity.x = 0  
 	else:
-		# Limited mid-air control
 		if direction != 0:
 			velocity.x = direction * AIR_CONTROL_SPEED
 		else:

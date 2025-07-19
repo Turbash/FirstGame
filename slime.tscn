@@ -4,28 +4,25 @@
 [ext_resource type="Script" uid="uid://xhmbuyuthhpm" path="res://slime.gd" id="1_4l1t8"]
 [ext_resource type="PackedScene" uid="uid://gx8inmnr67gr" path="res://killzone.tscn" id="2_5jc4t"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5jc4t"]
-atlas = ExtResource("1_2d52u")
-region = Rect2(0, 24, 24, 24)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_4l1t8"]
 atlas = ExtResource("1_2d52u")
-region = Rect2(24, 24, 24, 24)
+region = Rect2(0, 27, 24, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppcr1"]
 atlas = ExtResource("1_2d52u")
-region = Rect2(48, 24, 24, 24)
+region = Rect2(24, 27, 24, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jayke"]
 atlas = ExtResource("1_2d52u")
-region = Rect2(72, 24, 24, 24)
+region = Rect2(48, 27, 24, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2002g"]
+atlas = ExtResource("1_2d52u")
+region = Rect2(72, 27, 24, 22)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2002g"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5jc4t")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4l1t8")
 }, {
@@ -34,6 +31,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jayke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2002g")
 }],
 "loop": true,
 "name": &"idle",
@@ -47,10 +47,11 @@ size = Vector2(10, 11.75)
 script = ExtResource("1_4l1t8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_2002g")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.167877
 
 [node name="Killzone" parent="." instance=ExtResource("2_5jc4t")]
 

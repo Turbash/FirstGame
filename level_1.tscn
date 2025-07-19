@@ -1,10 +1,10 @@
 [gd_scene load_steps=17 format=3 uid="uid://ca2jvwgsal41s"]
 
+[ext_resource type="Script" uid="uid://coylkwrb32a35" path="res://level_1.gd" id="1_1pe0h"]
 [ext_resource type="PackedScene" uid="uid://r6no7klp707f" path="res://player.tscn" id="1_hbghi"]
 [ext_resource type="Script" uid="uid://66lj0cj1qi7" path="res://gamemangager.gd" id="2_1pe0h"]
 [ext_resource type="Texture2D" uid="uid://cwitur7boyvrf" path="res://art/world_tileset.png" id="3_bjebc"]
 [ext_resource type="PackedScene" uid="uid://du51p2p5nqnq2" path="res://goal_flag.tscn" id="3_ihfcg"]
-[ext_resource type="PackedScene" uid="uid://ce24kjgv4s0bi" path="res://bounaries.tscn" id="5_rka8t"]
 [ext_resource type="PackedScene" uid="uid://cblrnkpohratx" path="res://platform.tscn" id="8_bjebc"]
 [ext_resource type="PackedScene" uid="uid://batl7c6i8a63" path="res://coin.tscn" id="9_5rr72"]
 [ext_resource type="PackedScene" uid="uid://gx8inmnr67gr" path="res://killzone.tscn" id="9_gyffv"]
@@ -229,6 +229,7 @@ distance = 0.129105
 
 [node name="Level1" type="Node2D"]
 position = Vector2(1, 0)
+script = ExtResource("1_1pe0h")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -275,12 +276,11 @@ limit_left = 10
 limit_top = 0
 limit_right = 640
 limit_bottom = 350
+position_smoothing_enabled = true
+drag_vertical_enabled = true
 
 [node name="GoalFlag" parent="." instance=ExtResource("3_ihfcg")]
 position = Vector2(202, -309)
-
-[node name="Boundaries" parent="." instance=ExtResource("5_rka8t")]
-position = Vector2(3, 238)
 
 [node name="Platform" parent="." instance=ExtResource("8_bjebc")]
 position = Vector2(-222, -400)
@@ -333,9 +333,9 @@ text = "Falling hurts"
 
 [node name="Label3" type="Label" parent="Lablels"]
 offset_left = 29.0
-offset_top = 166.0
-offset_right = 148.0
-offset_bottom = 196.0
+offset_top = 168.0
+offset_right = 134.0
+offset_bottom = 198.0
 theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
 theme_override_fonts/font = ExtResource("10_gyffv")
 theme_override_font_sizes/font_size = 8
@@ -344,10 +344,10 @@ text = "Collect coins to increase score
 autowrap_mode = 2
 
 [node name="Label4" type="Label" parent="Lablels"]
-offset_left = 235.0
-offset_top = 124.0
-offset_right = 400.0
-offset_bottom = 143.0
+offset_left = 236.0
+offset_top = 127.0
+offset_right = 401.0
+offset_bottom = 146.0
 theme_override_colors/font_color = Color(0.0980392, 0.313726, 0.752941, 1)
 theme_override_fonts/font = ExtResource("10_gyffv")
 theme_override_font_sizes/font_size = 8
