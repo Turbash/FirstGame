@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://fdv5yq0k8sln"]
+[gd_scene load_steps=9 format=4 uid="uid://fdv5yq0k8sln"]
 
 [ext_resource type="Texture2D" uid="uid://cwitur7boyvrf" path="res://art/world_tileset.png" id="1_l2arl"]
 [ext_resource type="Script" uid="uid://nhntfaxof5iw" path="res://win_screen.gd" id="1_l5t5q"]
 [ext_resource type="FontFile" uid="uid://dg7vpj7o7toj0" path="res://fonts/PixelOperator8-Bold.ttf" id="2_wmwda"]
 [ext_resource type="FontFile" uid="uid://j2guvnqqy7po" path="res://fonts/PixelOperator8.ttf" id="4_1txte"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l5t5q"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1txte"]
 texture = ExtResource("1_l2arl")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -176,7 +176,13 @@ texture = ExtResource("1_l2arl")
 
 [sub_resource type="TileSet" id="TileSet_1txte"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_l5t5q")
+sources/0 = SubResource("TileSetAtlasSource_1txte")
+
+[sub_resource type="InputEventAction" id="InputEventAction_1txte"]
+action = &"start_game"
+
+[sub_resource type="Shortcut" id="Shortcut_26557"]
+events = [SubResource("InputEventAction_1txte")]
 
 [node name="WinScreen" type="Node2D"]
 script = ExtResource("1_l5t5q")
@@ -221,10 +227,10 @@ vertical_alignment = 1
 offset_top = 35.0
 offset_right = 639.0
 offset_bottom = 64.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(0.980392, 0, 0, 0.941176)
 theme_override_fonts/font = ExtResource("4_1txte")
 theme_override_font_sizes/font_size = 8
-text = "Oooh! but you did not collect all the coins"
+text = "Oooh! but you did not collect all the coins. Try Again!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -237,6 +243,7 @@ theme_override_colors/font_hover_color = Color(0.0980392, 0.313726, 0.752941, 1)
 theme_override_colors/font_color = Color(0.0784314, 0.596078, 0.862745, 1)
 theme_override_fonts/font = ExtResource("2_wmwda")
 theme_override_font_sizes/font_size = 32
+shortcut = SubResource("Shortcut_26557")
 text = "Restart Game"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

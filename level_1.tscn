@@ -354,6 +354,16 @@ theme_override_font_sizes/font_size = 8
 text = "Reach the flag to progress
 "
 
+[node name="Label" type="Label" parent="Lablels"]
+offset_left = 147.0
+offset_top = 245.0
+offset_right = 292.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(0.0980392, 0.313726, 0.752941, 1)
+theme_override_fonts/font = ExtResource("10_gyffv")
+theme_override_font_sizes/font_size = 8
+text = "Use arrow keys to move"
+
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 
 [editable path="Player"]

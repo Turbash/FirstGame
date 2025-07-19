@@ -32,4 +32,4 @@ func restart_game():
 	total_coins = 0
 	coins_at_level_start = 0
 	current_level_index=0
-	get_tree().change_scene_to_file(level_scenes[0])
+	ScreenTransition.fade_to_scene(level_scenes[0])
