@@ -183,7 +183,7 @@ normal = Vector2(-0.99987, 0.0161329)
 distance = 0.129105
 
 [sub_resource type="Animation" id="Animation_5rr72"]
-length = 0.8
+length = 1.5
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -192,10 +192,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(355, 155), Vector2(275, 155)]
+"values": [Vector2(62, 182), Vector2(196, 182)]
 }
 
 [sub_resource type="Animation" id="Animation_bjebc"]
@@ -286,7 +286,7 @@ shape = SubResource("WorldBoundaryShape2D_ehv2h")
 position = Vector2(580, 154)
 
 [node name="PlatformYellow2" parent="." instance=ExtResource("8_ehv2h")]
-position = Vector2(355, 155)
+position = Vector2(62, 182)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlatformYellow2"]
 libraries = {

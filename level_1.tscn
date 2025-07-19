@@ -11,7 +11,7 @@
 [ext_resource type="FontFile" uid="uid://dg7vpj7o7toj0" path="res://fonts/PixelOperator8-Bold.ttf" id="10_1pe0h"]
 [ext_resource type="FontFile" uid="uid://j2guvnqqy7po" path="res://fonts/PixelOperator8.ttf" id="10_gyffv"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1pe0h"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gyffv"]
 texture = ExtResource("3_bjebc")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -182,7 +182,7 @@ texture = ExtResource("3_bjebc")
 
 [sub_resource type="TileSet" id="TileSet_gyffv"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_1pe0h")
+sources/0 = SubResource("TileSetAtlasSource_gyffv")
 
 [sub_resource type="Animation" id="Animation_5rr72"]
 length = 1.5
